@@ -2,30 +2,15 @@ import { getTechnology, setTechnology } from "./database.js"
 
 const technology = getTechnology()
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "metal") {
-//            setMetal(parseInt(event.target.value))
-//         }
-//     }
-// )
-
 document.addEventListener(
-    "click",
-    (clickEvent) => {
-        const itemClicked = clickEvent.target
-        if (itemClicked.id.startsWith("technology")) {
-            const [,id] = itemClicked.id.split("--")
-
-            for (const tech of technology) {
-                if (tech.id === parseInt(id)) {
-                    window.alert(`${tech.technology} costs $${tech.price}`)
-                }
-            }
+    "change",
+    (event) => {
+        if (event.target.name === "technology") {
+           setTechnology(parseInt(event.target.value))
         }
     }
 )
+
 
 export const Technology = () => {
     let html = "<ul>"

@@ -2,16 +2,18 @@ import { Wheels } from "./Wheels.js";
 import { Technology } from "./Technology.js";
 import { Interiors } from "./Interiors.js";
 import { Colors } from "./Colors.js";
+import { addCustomOrder } from "./database.js"
+import { Orders } from "./Orders.js";
 
 
-// document.addEventListener(
-//     "click",
-//     (event) => {
-//         if (event.target.id === 'orderButton'){
-//             addCustomOrder()
-//         }
-//     }
-// )
+document.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === 'orderButton'){
+            addCustomOrder()
+        }
+    }
+)
 
 export const ShowCars = () => {
     return `
@@ -42,6 +44,7 @@ export const ShowCars = () => {
 
         <article class="customOrders">
         <h2>Custom Car Orders</h2>
+        ${Orders()}
         </article>
     `
 }
