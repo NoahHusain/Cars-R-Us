@@ -10,14 +10,29 @@ const interiors = getInterior()
 //         }
 //     }
 // )
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+        if (itemClicked.id.startsWith("interior")) {
+            const [,id] = itemClicked.id.split("--")
+
+            for (const interior of interiors) {
+                if (interior.id === parseInt(id)) {
+                    window.alert(`${interior.interior} costs $${interior.price}`)
+                }
+            }
+        }
+    }
+)
 
 export const Interiors = () => {
     let html = "<ul>"
 
     // This is how you have been converting objects to <li> elements
     for (const interior of interiors) {
-        html += `<li>
-            <input type="radio" name="metal" value="${interior.id}" /> ${interior.interior}
+        html += `<li id='interior--${interior.id}'>
+            <input type="radio" name="interiors" value="${interior.id}" /> ${interior.interior}
         </li>`
     }
 

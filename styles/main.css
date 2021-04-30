@@ -8,10 +8,11 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #292929;
   font-family: "Comfortaa", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  background-color: grey;
 }
 
 h1,
