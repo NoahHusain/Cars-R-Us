@@ -36,9 +36,12 @@ const buildOrderListItem = (order) => {
         currency: "USD"
     })
 
-
+    // let timestamp = order.timestamp;
+    // let workingTimestamp = timestamp.toString();
+    
+    
     return `<li>
-        Order #${order.id} with the options ${colors[order.paintColorId - 1].color} paint, ${interiors[order.interiorId - 1].interior} interior, ${technology[order.technologyId - 1].technology} technology package and, ${wheels[order.paintColorId - 1].wheels} wheels costs ${costString}
+        Order #${order.id} was placed at ${order.timestamp} with the options ${colors[order.paintColorId - 1].color} paint, ${interiors[order.interiorId - 1].interior} interior, ${technology[order.technologyId - 1].technology} technology package and, ${wheels[order.paintColorId - 1].wheels} wheels costs ${costString}
     </li>`
 }
 
